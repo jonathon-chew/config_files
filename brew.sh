@@ -13,6 +13,10 @@ packages=(
     "sqlite"
     "blueutil"
     "nvim"
+    "vlc"
+    "grandperspective"
+    "firefox"
+    "go"
 )
 
 # Loop over the array to install each application.
