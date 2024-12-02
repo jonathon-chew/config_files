@@ -9,4 +9,5 @@ read
 # Set scroll as traditional instead of natural
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false && killall Finder
 
-echo "Done configuring the Mac Settings
+echo "Done configuring the Mac Settings"
+echo "Terminal Custom settings are stored as Custom.terminal file"

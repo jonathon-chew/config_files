@@ -1,14 +1,8 @@
 #/bin/bash
 
-# Update Homebrew and Upgrade any already-installed formulae
-brew update
-brew upgrade
-brew upgrade --cask
-brew cleanup
-
 # Define an array of packages to install using Homebrew.
 packages=(
-    "python"
+    "python@3.13"
     "bash"
     "zsh"
     "git"
@@ -18,6 +12,7 @@ packages=(
     "gh"
     "sqlite"
     "blueutil"
+    "nvim"
 )
 
 # Loop over the array to install each application.
@@ -30,3 +25,8 @@ for package in "${packages[@]}"; do
     fi
 done
 
+# Update Homebrew and Upgrade any already-installed formulae
+brew update
+brew upgrade
+brew upgrade --cask
+brew cleanup
