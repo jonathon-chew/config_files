@@ -1,7 +1,7 @@
 # A quick way to add comments to multiple lines in NeoVim
 
 ## Intended use:
-<leader>cc {X}
+\<leader\>cc {X}
 
 Change X to match the number of lines which you wish to comment out from the current line down.
 The cursor will not move -> This is intentional.
