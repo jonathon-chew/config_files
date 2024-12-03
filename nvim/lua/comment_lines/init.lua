@@ -28,17 +28,17 @@ function M.comment_lines(count)
     local comment_marker, close_marker = markers[1], markers[2]
 
     -- Calculate the end line based on the count
-    local end_line   = math.min(start_line + count - 1, vim.api.nvim_buf_line_count(buf) - 1)
+    local end_line   = math.min(start_line + count, vim.api.nvim_buf_line_count(buf))
 
     -- Loop through the lines and prepend the comment marker
     for line = start_line, end_line do
         local current_line = vim.api.nvim_buf_get_lines(buf, line, line + 1, false)[1]
         if line == end_line and close_marker then
             -- Add both the opening and closing marker to the last line
-            vim.api.nvim_buf_set_lines(buf, line, line + 1, false, { comment_marker .. " " .. current_line .. " " .. close_marker })
+            vim.api.nvim_buf_set_lines(buf, line, line + 1, false, { comment_marker .. current_line .. " " .. close_marker })
         else
             -- Add only the opening marker to other lines
-            vim.api.nvim_buf_set_lines(buf, line, line + 1, false, { comment_marker .. " " .. current_line })
+            vim.api.nvim_buf_set_lines(buf, line, line + 1, false, { comment_marker .. current_line })
         end
     end
 end
