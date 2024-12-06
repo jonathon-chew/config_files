@@ -5,12 +5,17 @@
 
 # Run the Mac OS script to apply the settings that I like
 cd $HOME
-cp ./.zshrc . 
 mkdir .config
+
+# Sym link the zsh file to the one in the config folder
+ln -s ./.zshrc . 
 
 # Set the terminal settings
 echo "When opening Terminal point to this file to get the current settings"
 echo ""
+
+# Get brew before running brew! 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Run the brew script installing regularly used programmes and CLI tools
 ./brew.sh
