@@ -64,7 +64,12 @@ function largeFiles(){
 }
 
 # Write out the description of the man page
-function describe (){man $1 | col -b | sed -n '/^DESCRIPTION$/,/^[A-Z ]\{2,\}$/p' | sed '1d;$d'
+function describe (){
+if [ "$1" ]; then
+  man $1 | col -b | sed -n '/^DESCRIPTION$/,/^[A-Z ]\{2,\}$/p' | sed '2d;$d' | awk -v RS= -v ORS="\n\n" 'NR<=2'
+else
+  echo "USAGE: describe [bash function]"
+fi
 }
 
 #function newGitHub(){
