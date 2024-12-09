@@ -17,6 +17,8 @@ packages=(
     "grandperspective"
     "firefox"
     "go"
+    "tree"
+    "nvim"
 )
 
 # Loop over the array to install each application.
