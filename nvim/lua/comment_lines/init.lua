@@ -43,13 +43,13 @@ function M.comment_lines(count)
     end
 end
 
--- Create a command that calls the function
-vim.api.nvim_create_user_command(
-    "CommentLines",
-    function(opts)
-        M.comment_lines(tonumber(opts.args))
-    end,
-    { nargs = 1 } -- Requires exactly one argument (number of lines)
-)
+---- Create a command that calls the function
+--vim.api.nvim_create_user_command(
+--    "CommentLines",
+--    function(opts)
+--        M.comment_lines(tonumber(opts.args))
+--    end,
+--    { nargs = 1 } -- Requires exactly one argument (number of lines)
+--)
 
 return M
