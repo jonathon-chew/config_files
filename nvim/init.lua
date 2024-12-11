@@ -633,3 +633,7 @@ cmp.setup {
 
 require('comment_lines')
 vim.api.nvim_set_keymap('n', '<Leader>cc', ':CommentLines<Space>', { noremap = true, silent = false })
+
+require('align_equals')
+-- Normal mode command
+vim.api.nvim_set_keymap('n', '<leader>ae', "<cmd>lua require'align_equals'.prompt_align()<CR>", { noremap = true, silent = true })
