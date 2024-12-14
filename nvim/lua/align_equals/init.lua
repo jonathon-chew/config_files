@@ -3,34 +3,34 @@ local M = {}
 -- Function to align equals signs
 -- mode not used - as not looking for visual or normal mode atm
 function M.align_equals(mode, lines_below)
-  local bufnr = vim.api.nvim_get_current_buf()
+  local bufnr         = vim.api.nvim_get_current_buf()
   local start_row, end_row
 
   -- Normal mode: get current line and calculate range
-  local current_line = vim.fn.line('.')
-  start_row = current_line - 1
-  end_row = start_row + (lines_below or 0)
+  local current_line  = vim.fn.line('.')
+  start_row           = current_line - 1
+  end_row             = start_row + (lines_below or 0)
 
   -- Get lines in the range
-  local lines = vim.api.nvim_buf_get_lines(bufnr, start_row, end_row + 1, false)
+  local lines     = vim.api.nvim_buf_get_lines(bufnr, start_row, end_row + 1, false)
 
   -- Find the max column of '='
-  local max_col = 0
+  local max_col   = 0
   for _, line in ipairs(lines) do
-    local eq_pos = line:find('=')
+    local eq_pos  = line:find('=')
     if eq_pos and eq_pos > max_col then
-      max_col = eq_pos
+      max_col     = eq_pos
     end
   end
 
   -- Adjust each line to align '='
-  local adjusted_lines = {}
+  local adjusted_lines  = {}
   for _, line in ipairs(lines) do
-    local eq_pos = line:find(' = ')
+    local eq_pos = line:find('=')
       if eq_pos then
         local before_eq = line:sub(1, eq_pos - 1)
-        local after_eq = line:sub(eq_pos)
-        local padding = string.rep(' ', max_col - eq_pos)
+        local after_eq  = line:sub(eq_pos)
+        local padding   = string.rep(' ', max_col - eq_pos)
         table.insert(adjusted_lines, before_eq .. padding .. after_eq)
       else
         table.insert(adjusted_lines, line) -- No '=' in this line, leave unchanged
@@ -38,7 +38,8 @@ function M.align_equals(mode, lines_below)
   end
 
   -- Replace lines in buffer
-  print(bufnr, start_row, end_row, adjusted_lines)
+  -- print(' ', bufnr, start_row, end_row, adjusted_lines)
+  print(" Start row: ", start_row, "end row: ", end_row)
   vim.api.nvim_buf_set_lines(bufnr, start_row, end_row + 1, false, adjusted_lines)
 end
 
