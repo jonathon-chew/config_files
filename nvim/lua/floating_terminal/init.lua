@@ -47,13 +47,19 @@ local toggle_terminal = function()
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
       vim.cmd.terminal()
     end
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("i", true, false, true), "n", true)
   else
-    vim.api.nvim_win_hide(state.floating.win)
+    -- Get the buffer associated with the window
+      local buf = state.floating.buf
+    -- Hide the window
+      vim.api.nvim_win_hide(state.floating.win)
+    -- Check if the buffer is valid before deleting
+      if vim.api.nvim_buf_is_valid(buf) then
+        vim.api.nvim_buf_delete(buf, { force = true }) -- Force delete to ensure it's removed
+      end
   end
 end
 
 -- Example usage:
 -- Create a floating window with default dimensions
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-
-vim.keymap.set("n", "<leader>t", "Floaterminal")
