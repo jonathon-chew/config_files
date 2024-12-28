@@ -15,6 +15,8 @@ export SQL='/Users/hunteradder626/Library/CloudStorage/OneDrive-Personal/Documen
 export Powershell='/Users/hunteradder626/Library/CloudStorage/OneDrive-Personal/Documents/Scripts/Powershell'
 export JQuery='/Users/hunteradder626/Library/CloudStorage/OneDrive-Personal/Documents/Scripts/JQuery'
 
+export Downloads=$HOME/Downloads
+export Documents=$HOME/Documents
 export GOPATH=$HOME/go
 
 # Sleep the laptop after 60 minutes, update every 10 seconds
