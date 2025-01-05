@@ -13,6 +13,7 @@ local comment_markers = {
     css         = { "/*", "*/" },
     markdown    = { "<!--", "-->" },
     sh          = { "#", nil },
+    go          = { "//", nil},
 }
 
 -- Adds comment markers to the start of lines based on filetype

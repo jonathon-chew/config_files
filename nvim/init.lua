@@ -641,3 +641,5 @@ vim.api.nvim_set_keymap('n', '<leader>ae', "<cmd>lua require'align_equals'.promp
 
 require('floating_terminal')
 vim.api.nvim_set_keymap('n', '<leader>t', ":Floaterminal<CR>", { noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', "<leader>go", ":%s/\t/    /g<CR>", { noremap = true, silent = false})
