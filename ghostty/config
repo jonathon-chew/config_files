@@ -1,0 +1,5 @@
+theme         = desert
+font-size     = 27
+font-feature = -calt
+font-feature = -lig
+font-feature = -dlig 
