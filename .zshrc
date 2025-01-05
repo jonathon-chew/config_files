@@ -32,7 +32,7 @@ for ((i=0; i < 3600; i+=10)); do;
 }
 
 # Set what the terminal looks like on each line
-# export PS1="%n@%m %1~ %# "
+#export PS1="%n@%m %1~ %# "
 export PS1="%3~ -> "
 
 #Quickly run a server in current folder
