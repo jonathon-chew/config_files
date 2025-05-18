@@ -19,7 +19,7 @@ export Downloads=$HOME/Downloads
 export Documents=$HOME/Documents
 export GOPATH=$HOME/go
 
-source $HOME/.config/.githubtoken
+# source $HOME/.config/.githubtoken
 
 # Sleep the laptop after 60 minutes, update every 10 seconds
 function bedtime(){
