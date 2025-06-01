@@ -295,7 +295,10 @@ end
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
-vim.opt.wrap = true
+vim.keymap.set('n', '<C-z>', function()
+  vim.wo.wrap = not vim.wo.wrap
+end, { desc = "Toggle line wrap" })
+-- vim.opt.wrap = false
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
