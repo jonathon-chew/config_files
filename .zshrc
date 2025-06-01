@@ -1,7 +1,6 @@
 ##key folders
 export cloud="$HOME/Library/CloudStorage/OneDrive-Personal"
 export Scripts="$HOME/Documents/Scripts"
-export Reddit="$HOME/Documents/Scripts/Python/Works/What_Does_Reddit_Care_about/Ask_Reddit"
 export Apple_Scripts="$HOME/Documents/Scripts/Apple_Scripts"
 export Git="$HOME/Documents/Scripts/Git"
 export Go="$HOME/Documents/Scripts/Go"

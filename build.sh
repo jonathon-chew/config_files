@@ -20,6 +20,9 @@ echo ""
 # Run the brew script installing regularly used programmes and CLI tools
 ./brew.sh
 
+# Make the folders in my document folders
+./makeFolders.sh
+
 # Set the VS Code Setting
 echo "When opening VSCode point to this file to get the current settings"
 echo "Standard.code-profile"
