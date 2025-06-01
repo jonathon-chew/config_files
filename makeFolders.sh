@@ -25,12 +25,12 @@ subfolders = (
 )
 
 for folder in "${folders[@]}"; do
-  mkdir -p folder
+  mkdir -p $folder
   echo "Making $folder"
   pushd folder
   
   for subfolder in "${subfolders[@]}"; do 
-    mkdir -p subfolder
+    mkdir -p $subfolder
     echo "Making $folder/$subfolder"
   done
 
