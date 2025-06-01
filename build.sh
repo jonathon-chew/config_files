@@ -5,7 +5,8 @@
 
 # Run the Mac OS script to apply the settings that I like
 cd $HOME
-mkdir .config
+mkdir -p .config
+cd .config
 
 # Sym link the zsh file to the one in the config folder
 ln -s ./.zshrc . 
